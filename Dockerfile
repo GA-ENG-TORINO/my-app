@@ -133,5 +133,7 @@ RUN ln -s /usr/local/tomcat/webapps.dist/manager webapps/manager
 RUN ln -s /usr/local/tomcat/webapps.dist/host-manager webapps/host-manager
 RUN ln -s /usr/local/tomcat/webapps.dist/ROOT webapps/ROOT
 
+COPY target/myweb*.war $CATALINA_HOME/webapps/myweb.war
+
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
