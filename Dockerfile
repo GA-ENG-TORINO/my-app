@@ -125,6 +125,8 @@ RUN set -e \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
+
+ADD tomcat-users.xml /usr/local/tomcat/conf
 	
 RUN ln -s /usr/local/tomcat/webapps.dist/manager webapps/manager
 RUN ln -s /usr/local/tomcat/webapps.dist/host-manager webapps/host-manager
