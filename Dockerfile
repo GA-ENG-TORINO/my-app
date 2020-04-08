@@ -127,6 +127,7 @@ RUN set -e \
 	fi
 
 ADD tomcat-users.xml /usr/local/tomcat/conf
+ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/
 	
 RUN ln -s /usr/local/tomcat/webapps.dist/manager webapps/manager
 RUN ln -s /usr/local/tomcat/webapps.dist/host-manager webapps/host-manager
