@@ -125,6 +125,10 @@ RUN set -e \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
+	
+RUN ln -s /usr/local/tomcat/webapps.dist/manager webapps/manager
+RUN ln -s /usr/local/tomcat/webapps.dist/host-manager webapps/host-manager
+RUN ln -s /usr/local/tomcat/webapps.dist/ROOT webapps/ROOT
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
